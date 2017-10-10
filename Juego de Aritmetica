@@ -1,0 +1,611 @@
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import java.util.Random;
+
+
+public class Aritmetica1 extends javax.swing.JFrame  implements KeyListener{
+    int num1, num2, res, res2, contadorPositivo, contadorNegativo;
+    String operacion;
+    
+    
+
+    
+    public Aritmetica1() {
+        
+        initComponents();
+        addKeyListener(this);
+        
+    }
+    public void resultado(){
+        textRes.setText("");
+        
+        if(btnSuma.isSelected()){
+            Random random=new Random();
+            operacion ="+";
+            num1=(int)(8*random.nextDouble())+1;
+            num2=(int)(8*random.nextDouble())+1;
+            textNum1.setText(Integer.toString(num1));
+            textNum2.setText(Integer.toString(num2));
+            textOperacion.setText(operacion);
+            if(operacion.equals("+"))res = num1+num2;
+        }
+        else if(btnResta.isSelected()){
+            Random random=new Random();
+            operacion ="-";
+            num1=(int)(8*random.nextDouble())+1;
+            num2=(int)(8*random.nextDouble())+1;
+            textNum1.setText(Integer.toString(num1));
+            textNum2.setText(Integer.toString(num2));
+            textOperacion.setText(operacion);
+            if(operacion.equals("-"))res = num1-num2;
+        }
+        else if(btnMultiplicacion.isSelected()){
+            Random random=new Random();
+            operacion ="*";
+            num1=(int)(8*random.nextDouble())+1;
+            num2=(int)(8*random.nextDouble())+1;
+            textNum1.setText(Integer.toString(num1));
+            textNum2.setText(Integer.toString(num2));
+            textOperacion.setText(operacion);
+            if(operacion.equals("*"))res = num1*num2;
+        }
+        else if(btnDivision.isSelected()){
+            Random random=new Random();
+            operacion ="/";
+            num1=(int)(8*random.nextDouble())+1;
+            num2=(int)(8*random.nextDouble())+1;
+            textNum1.setText(Integer.toString(num1));
+            textNum2.setText(Integer.toString(num2));
+            textOperacion.setText(operacion);
+            if(operacion.equals("/"))res = num1/num2;
+        }
+    }
+    public void reset(){
+        textCorrectas.setText("");
+        textIncorrectas.setText("");
+        textNum1.setText("");
+        textNum2.setText("");
+        contadorPositivo=0;
+        contadorNegativo=0;
+    }
+
+    
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
+    private void initComponents() {
+
+        VentanaJuego = new javax.swing.JDialog();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        textCorrectas = new javax.swing.JTextField();
+        textIncorrectas = new javax.swing.JTextField();
+        btnSuma = new javax.swing.JRadioButton();
+        btnResta = new javax.swing.JRadioButton();
+        btnMultiplicacion = new javax.swing.JRadioButton();
+        btnDivision = new javax.swing.JRadioButton();
+        textNum1 = new javax.swing.JTextField();
+        textOperacion = new javax.swing.JTextField();
+        textNum2 = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        textRes = new javax.swing.JTextField();
+        btnCalcular = new javax.swing.JButton();
+        btnSalir = new javax.swing.JButton();
+        btnReiniciar = new javax.swing.JButton();
+        btnResultado = new javax.swing.JButton();
+        jLabel10 = new javax.swing.JLabel();
+        buttonGroupAritmetica = new javax.swing.ButtonGroup();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+
+        VentanaJuego.setTitle("Juego");
+        VentanaJuego.setModal(true);
+        VentanaJuego.setSize(new java.awt.Dimension(500, 400));
+
+        jPanel2.setBackground(new java.awt.Color(255, 204, 204));
+        jPanel2.setForeground(new java.awt.Color(240, 240, 240));
+        jPanel2.setPreferredSize(new java.awt.Dimension(500, 400));
+
+        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel7.setText("Correctas");
+
+        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel8.setText("Incorrectas");
+
+        textCorrectas.setEditable(false);
+        textCorrectas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textCorrectasActionPerformed(evt);
+            }
+        });
+
+        textIncorrectas.setEditable(false);
+
+        btnSuma.setBackground(new java.awt.Color(255, 255, 255));
+        buttonGroupAritmetica.add(btnSuma);
+        btnSuma.setText("Suma");
+        btnSuma.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSumaActionPerformed(evt);
+            }
+        });
+
+        buttonGroupAritmetica.add(btnResta);
+        btnResta.setText("Resta");
+        btnResta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRestaActionPerformed(evt);
+            }
+        });
+
+        buttonGroupAritmetica.add(btnMultiplicacion);
+        btnMultiplicacion.setText("Multiplicacion");
+        btnMultiplicacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMultiplicacionActionPerformed(evt);
+            }
+        });
+
+        buttonGroupAritmetica.add(btnDivision);
+        btnDivision.setText("Division");
+        btnDivision.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDivisionActionPerformed(evt);
+            }
+        });
+
+        textNum1.setEditable(false);
+        textNum1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textNum1ActionPerformed(evt);
+            }
+        });
+        textNum1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                textNum1KeyTyped(evt);
+            }
+        });
+
+        textOperacion.setEditable(false);
+
+        textNum2.setEditable(false);
+
+        jLabel9.setText("=");
+
+        btnCalcular.setBackground(new java.awt.Color(153, 153, 153));
+        btnCalcular.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnCalcular.setForeground(new java.awt.Color(0, 51, 51));
+        btnCalcular.setText("Calcular");
+        btnCalcular.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCalcularActionPerformed(evt);
+            }
+        });
+
+        btnSalir.setBackground(new java.awt.Color(153, 153, 153));
+        btnSalir.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnSalir.setText("Salir");
+        btnSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalirActionPerformed(evt);
+            }
+        });
+
+        btnReiniciar.setBackground(new java.awt.Color(153, 153, 153));
+        btnReiniciar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnReiniciar.setText("Reiniciar");
+        btnReiniciar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnReiniciarActionPerformed(evt);
+            }
+        });
+
+        btnResultado.setBackground(new java.awt.Color(153, 153, 153));
+        btnResultado.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnResultado.setText("Resultado");
+        btnResultado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnResultadoActionPerformed(evt);
+            }
+        });
+
+        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel10.setText("ELIJE LA OPERACION DESEADA");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(btnSuma))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(btnResta))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(btnMultiplicacion))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(btnDivision))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(54, 54, 54)
+                        .addComponent(btnCalcular)
+                        .addGap(6, 6, 6)
+                        .addComponent(btnResultado)
+                        .addGap(6, 6, 6)
+                        .addComponent(btnReiniciar)
+                        .addGap(10, 10, 10)
+                        .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel10))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(54, 54, 54)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel7)
+                                    .addComponent(textCorrectas, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(51, 51, 51)
+                                .addComponent(textNum1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(192, 192, 192)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(textIncorrectas, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel8)))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(textOperacion, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(textNum2, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(10, 10, 10)
+                                .addComponent(jLabel9)
+                                .addGap(18, 18, 18)
+                                .addComponent(textRes, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(102, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addComponent(jLabel10)
+                .addGap(1, 1, 1)
+                .addComponent(btnSuma)
+                .addGap(0, 0, 0)
+                .addComponent(btnResta)
+                .addGap(0, 0, 0)
+                .addComponent(btnMultiplicacion)
+                .addGap(0, 0, 0)
+                .addComponent(btnDivision)
+                .addGap(12, 12, 12)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(textNum1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textOperacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textNum2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel9)
+                    .addComponent(textRes, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(13, 13, 13)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel7)
+                    .addComponent(jLabel8))
+                .addGap(6, 6, 6)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(textCorrectas, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textIncorrectas, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(42, 42, 42)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnCalcular)
+                    .addComponent(btnResultado)
+                    .addComponent(btnReiniciar)
+                    .addComponent(btnSalir)))
+        );
+
+        javax.swing.GroupLayout VentanaJuegoLayout = new javax.swing.GroupLayout(VentanaJuego.getContentPane());
+        VentanaJuego.getContentPane().setLayout(VentanaJuegoLayout);
+        VentanaJuegoLayout.setHorizontalGroup(
+            VentanaJuegoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 427, Short.MAX_VALUE)
+        );
+        VentanaJuegoLayout.setVerticalGroup(
+            VentanaJuegoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 289, Short.MAX_VALUE)
+        );
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanel1.setBackground(new java.awt.Color(255, 102, 102));
+        jPanel1.setForeground(new java.awt.Color(240, 240, 240));
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 3, 24)); // NOI18N
+        jLabel1.setText("BIENVENIDO AL JUEGO");
+
+        jButton1.setBackground(new java.awt.Color(0, 0, 0));
+        jButton1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(240, 240, 240));
+        jButton1.setText("Iniciar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel3.setText("Reglas:");
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel2.setText("1.- Se mostraran diferentes operaciones aritmeticas y se seleccionara la deseada");
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel4.setText("2.- Apareceran operaciones al azar, respoder correctamente a cada una de ellas");
+
+        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel5.setText("3.- Si aciertas aparecera en la pantalla, al igual si fallas, al final te mostrara el total de aciertos");
+
+        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel6.setText("4.- Dar en iniciar para aceptar el reto");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel5)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jLabel6))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(182, 182, 182)
+                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(137, 137, 137)
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 297, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 96, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addGap(23, 23, 23))
+        );
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(2, 2, 2)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 570, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        pack();
+    }// </editor-fold>                        
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        VentanaJuego.setVisible(true);
+    }                                        
+
+    private void textCorrectasActionPerformed(java.awt.event.ActionEvent evt) {                                              
+        // TODO add your handling code here:
+    }                                             
+
+    private void btnSumaActionPerformed(java.awt.event.ActionEvent evt) {                                        
+        Random random=new Random();
+        operacion ="+";
+        num1=(int)(8*random.nextDouble())+1;
+        num2=(int)(8*random.nextDouble())+1;
+        textNum1.setText(Integer.toString(num1));
+        textNum2.setText(Integer.toString(num2));
+        textOperacion.setText(operacion);
+        if(operacion.equals("+"))res = num1+num2;
+       
+    }                                       
+
+    private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {                                            
+        res2=Integer.parseInt(textRes.getText());
+        if(res==res2){
+            textIncorrectas.setText("");
+            textCorrectas.setText("Correcto");
+            contadorPositivo++;
+            
+            resultado();
+        }
+        else{
+            textCorrectas.setText("");
+            textIncorrectas.setText("Incorrecto");
+            contadorNegativo++;
+            
+            resultado();
+        }
+    }                                           
+
+    private void textNum1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        
+    }                                        
+
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        System.exit(0);
+    }                                        
+
+    private void btnRestaActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        Random random=new Random();
+            operacion ="-";
+            num1=(int)(8*random.nextDouble())+1;
+            num2=(int)(8*random.nextDouble())+1;
+            textNum1.setText(Integer.toString(num1));
+            textNum2.setText(Integer.toString(num2));
+            textOperacion.setText(operacion);
+            if(operacion.equals("-"))res = num1-num2;
+    }                                        
+
+    private void btnResultadoActionPerformed(java.awt.event.ActionEvent evt) {                                             
+        textCorrectas.setText(Integer.toString(contadorPositivo));
+        textIncorrectas.setText(Integer.toString(contadorNegativo));
+    }                                            
+
+    private void btnMultiplicacionActionPerformed(java.awt.event.ActionEvent evt) {                                                  
+        Random random=new Random();
+            operacion ="*";
+            num1=(int)(8*random.nextDouble())+1;
+            num2=(int)(8*random.nextDouble())+1;
+            textNum1.setText(Integer.toString(num1));
+            textNum2.setText(Integer.toString(num2));
+            textOperacion.setText(operacion);
+            if(operacion.equals("*"))res = num1*num2;
+    }                                                 
+
+    private void btnDivisionActionPerformed(java.awt.event.ActionEvent evt) {                                            
+        Random random=new Random();
+            operacion ="/";
+            num1=(int)(8*random.nextDouble())+1;
+            num2=(int)(8*random.nextDouble())+1;
+            textNum1.setText(Integer.toString(num1));
+            textNum2.setText(Integer.toString(num2));
+            textOperacion.setText(operacion);
+            if(operacion.equals("/"))res = num1/num2;
+    }                                           
+
+    private void btnReiniciarActionPerformed(java.awt.event.ActionEvent evt) {                                             
+        if(btnSuma.isSelected()){
+            btnSuma.doClick();
+            reset();
+        }
+        else if(btnResta.isSelected()){
+            btnResta.doClick();
+            reset();
+        }
+        else if(btnMultiplicacion.isSelected()){
+            btnMultiplicacion.doClick();
+            reset();
+        }
+        else if(btnDivision.isSelected()){
+            btnDivision.doClick();
+            reset();
+        }
+    }                                            
+
+    private void textNum1KeyTyped(java.awt.event.KeyEvent evt) {                                  
+        // TODO add your handling code here:
+    }                                 
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(Aritmetica1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(Aritmetica1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(Aritmetica1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(Aritmetica1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new Aritmetica1().setVisible(true);
+            }
+        });
+    }
+
+    // Variables declaration - do not modify                     
+    private javax.swing.JDialog VentanaJuego;
+    private javax.swing.JButton btnCalcular;
+    private javax.swing.JRadioButton btnDivision;
+    private javax.swing.JRadioButton btnMultiplicacion;
+    private javax.swing.JButton btnReiniciar;
+    private javax.swing.JRadioButton btnResta;
+    private javax.swing.JButton btnResultado;
+    private javax.swing.JButton btnSalir;
+    private javax.swing.JRadioButton btnSuma;
+    private javax.swing.ButtonGroup buttonGroupAritmetica;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JTextField textCorrectas;
+    private javax.swing.JTextField textIncorrectas;
+    private javax.swing.JTextField textNum1;
+    private javax.swing.JTextField textNum2;
+    private javax.swing.JTextField textOperacion;
+    private javax.swing.JTextField textRes;
+    // End of variables declaration                   
+
+    @Override
+    public void keyTyped(KeyEvent e) {
+        if(!(e.getKeyChar()>='0'&&e.getKeyChar()<='9')&&
+                e.getKeyChar()!=KeyEvent.VK_BACK_SPACE&&
+                e.getKeyChar()!='-'){
+            e.consume();
+        }
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
+    }
+}
